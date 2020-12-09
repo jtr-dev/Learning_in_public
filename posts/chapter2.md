@@ -1,13 +1,15 @@
-==== Day 1 Chapter 1 ,2 and 3 
+# Day 1 Chapter 1 ,2 and 3 
 
-===== Types
+## Types
+
+### Numeric 
 
 Numeric : Long, Int, Double, Float
 
-----
+```
 (type 3)
 java.lang.Long
-----
+```
 
 ----
 (type 1.23)
