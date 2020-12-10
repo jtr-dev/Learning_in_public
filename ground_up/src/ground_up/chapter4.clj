@@ -11,20 +11,20 @@
   (count (filter #(= % character) collection))
 )
 
-(defn my_filter
+(defn my-filter
   "my version of the filter method"
-  [predicate collection]
+  [pred coll]
   (lazy-seq
-   (when-let [s (seq collection)]
-        (if (predicate (first s))
-          (cons (first s) (my_filter predicate (rest s)))
-          (my_filter predicate (rest s))))))
+   (when-let [s (seq coll)]
+        (if (pred (first s))
+          (cons (first s) (my-filter pred (rest s)))
+          (my-filter pred (rest s))))))
 
 (defn divisible? [a b]
   (zero? (mod a b)))
 
 (defn isPrime? [n]
-  (and (> n 1) (not-any? (partial divisible? n) (range 2 n))))
+  (and (> n 1) (not-any? #(divisible? n %) (range 2 n))))
 
 (defn my_primes
   "my version to print out primes to a certain number"
